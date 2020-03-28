@@ -1,0 +1,31 @@
+{% load static %}
+
+<h1>{{ request.session.round }}</h1>
+<h1>page_id</h1>
+
+<link rel="stylesheet" type="text/css" href="{% static 'page_generator/style.css' %}">
+
+<h1>{% lorem 6 w %}</h1>
+
+{% lorem 3 %}
+
+
+{% lorem 3 p %}
+
+<!-- <script>
+  setTimeout(goToNextPage, 3000);
+  function goToNextPage() {
+  	location.href = "http://127.0.0.1:8000/page_generator/"
+  }
+</script> -->
+
+
+
+<!-- príde mi request na zobrazenie page -->
+<!-- zistím si session[round] -->
+<!-- zmením session [round] na +1 -->
+<!-- podľa toho si získam array parametrov -->
+<!-- nastavím session[pk] -->
+<!-- vygenerujem stránku -->
+<!-- zavolá sa formulár s otázkami -->
+<!-- zistím si session[pk] -->
