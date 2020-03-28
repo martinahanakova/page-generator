@@ -41,16 +41,30 @@ class PageView(generic.ListView):
         order = self.request.session['round']
         pages = Page.objects.filter(participant=participant_id).filter(order=order)
 
+        if pages.first():
+            # set actual page to user session for next use in page rating
+            self.request.session['page_id'] = pages.first().id
+            # increase round for next use
+            self.request.session['round'] = order+1
+
         return pages
+
+
 class PageRatingView(generic.edit.CreateView):
     model = PageRating
     form_class = PageRatingCreateForm
-    success_url = '/page_generator/page'
     template_name = 'page_generator/page_rating.html'
 
     def form_valid(self, form):
-        form.instance.page = self.request.session.participant
+        page = Page.objects.get(pk=self.request.session['page_id'])
+        form.instance.page = page
         return super(PageRatingView, self).form_valid(form)
+
+    def get_success_url(self):
+        if self.request.session['round'] == 2:
+            return reverse('page_generator:index')
+        else:
+            return reverse('page_generator:page')
 
 
 class IndexView(generic.ListView):

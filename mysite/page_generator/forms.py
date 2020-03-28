@@ -26,6 +26,7 @@ class PageRatingCreateForm(forms.ModelForm):
     class Meta:
         model = PageRating
         fields = '__all__'
+        exclude = ['page',]
         widgets = {
             'credibility': forms.RadioSelect(),
         }
