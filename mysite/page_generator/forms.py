@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Participant, Page, PageRating
+from .models import Participant, PageRating
 
 
 class ParticipantCreateForm(forms.ModelForm):
@@ -40,9 +40,3 @@ class PageRatingCreateForm(forms.ModelForm):
             'text_length': ('Dĺžka textu'),
             'hyperlink_count': ('Počet hypertextových odkazov'),
         }
-
-
-class PageForm(forms.ModelForm):
-    class Meta:
-        model=Page
-        fields = '__all__'

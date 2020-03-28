@@ -1,7 +1,17 @@
 {% load static %}
 
+{% if pages %}
+    <ul>
+    {% for page in pages %}
+        <li>{{ page.participant }}/li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
 <h1>{{ request.session.round }}</h1>
-<h1>page_id</h1>
+<h1>{{  round_page.headline_size }}</h1>
 
 <link rel="stylesheet" type="text/css" href="{% static 'page_generator/style.css' %}">
 

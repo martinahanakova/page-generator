@@ -5,16 +5,11 @@ from django.dispatch import receiver
 from .models import Participant, Page
 
 
-@receiver(pre_save, sender=Participant)
-def generateParameters(sender, **kwargs):
-    instance = kwargs['instance']
-    print(instance.session_id)
-
-
-@receiver(post_save, sender=Participant)
+@receiver(post_save, sender=Participant, dispatch_uid='participant_updated')
 def generateParameters(sender, instance, created, **kwargs):
-    if created:
+    if not created:
         participant = instance
+        order = 1
         headline_size = 1
         font_size = 2
         font_style = 3
@@ -24,23 +19,16 @@ def generateParameters(sender, instance, created, **kwargs):
         hyperlink_count = 2
 
         page = Page(participant=participant,
-         headline_size=headline_size,
-         font_size=font_size,
-         font_style=font_style,
-         image_count=image_count,
-         colors=colors,
-         text_length=text_length,
-         hyperlink_count=hyperlink_count)
+            order=order,
+            headline_size=headline_size,
+            font_size=font_size,
+            font_style=font_style,
+            image_count=image_count,
+            colors=colors,
+            text_length=text_length,
+            hyperlink_count=hyperlink_count)
 
         page.save()
-
-        page_id = page.id
-
-        manipulate_sessions(page_id)
-
-        #parameters = [page_id, participant, headline_size, font_size, font_style,
-        #                image_count, colors, text_length, hyperlink_count]
-
 
 
 # pridať for cyklus pre generovanie stránok

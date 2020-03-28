@@ -75,6 +75,7 @@ class Page(models.Model):
         STYLE_3 = '3'
 
     participant = models.ForeignKey(Participant, on_delete=models.CASCADE)
+    order = models.IntegerField()
     headline_size = models.IntegerField(
         choices=ParameterChoices.choices,
         default=None,
