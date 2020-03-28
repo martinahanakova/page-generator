@@ -11,7 +11,7 @@ from .forms import ParticipantCreateForm, PageRatingCreateForm
 class QuestionaireView(generic.edit.CreateView):
     model = Participant
     form_class = ParticipantCreateForm
-    success_url = '/page_generator/page'
+    success_url = '/page_generator/start_page'
     template_name = 'page_generator/questionaire.html'
 
     def form_valid(self, form):
@@ -22,8 +22,13 @@ class QuestionaireView(generic.edit.CreateView):
         return super(QuestionaireView, self).form_valid(form)
 
 
-class PageView(generic.FormView):
-    form_class = PageForm
+class StartView(generic.base.TemplateView):
+    template_name = 'page_generator/start_page.html'
+
+    def start(request):
+        return HttpResponseRedirect('/page_generator/page')
+
+
 class PageView(generic.ListView):
     model = Page
     template_name = 'page_generator/page.html'
