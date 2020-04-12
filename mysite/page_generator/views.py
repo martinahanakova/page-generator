@@ -61,7 +61,8 @@ class PageRatingView(generic.edit.CreateView):
         return super(PageRatingView, self).form_valid(form)
 
     def get_success_url(self):
-        if self.request.session['round'] == 2:
+        # set to value number of rounds + 1
+        if self.request.session['round'] == 6:
             return reverse('page_generator:index')
         else:
             return reverse('page_generator:page')
