@@ -18,6 +18,8 @@ class QuestionaireView(generic.edit.CreateView):
         object = form.save()
         self.request.session['participant'] = object.id
         self.request.session['round'] = 1
+        if not self.request.session.session_key:
+            self.request.session.save()
         form.instance.session_id = self.request.session.session_key
         return super(QuestionaireView, self).form_valid(form)
 

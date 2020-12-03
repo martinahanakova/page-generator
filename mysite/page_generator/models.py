@@ -130,3 +130,5 @@ class PageRating(models.Model):
     colors = models.BooleanField(default=False)
     text_length = models.BooleanField(default=False)
     hyperlink_count = models.BooleanField(default=False)
+    page_layout = models.BooleanField(default=False)
+

@@ -1,30 +1,75 @@
 {% load static %}
 
 {% if pages %}
-    <ul>
     {% for page in pages %}
-        <li>{{ page.participant }}/li>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
+        <body class="font_style_{{page.font_style}} color_{{page.colors}} font_size_{{page.font_size}} headline_size_{{page.headline_size}}">
+        <h1>{% lorem 6 w random %}</h1>
+
+        {% lorem 3 %}
+        {% lorem 1 p %}
+
+        {% if page.text_length > 1 %}
+            {% lorem 3 %}
+            {% lorem 2 p %}
+        {% endif %}
+
+        {% lorem 4 %}
+
+        {% if page.text_length > 1 %}
+            {% lorem 2 %}
+            {% lorem 3 %}
+        {% endif %}
+
+        {% if page.text_length > 2 %}
+            {% lorem 4 %}
+            {% lorem 1 p %}
+            {% lorem 3 %}
+            {% lorem 3 %}
+            {% lorem 2 p %}
+        {% endif %}
+
+
+        $("#first").data("value", {{ page.headline_size }});
+        var headline_size = {{ page.headline_size }};
+        <li>{{ page.participant }}</li>
+        <li>$("#first").data("value")</li>
+        </body>
     {% endfor %}
-    </ul>
 {% else %}
-    <p>No polls are available.</p>
+    <p>No page available.</p>
 {% endif %}
 
+<html>
+<head>
+<style>
+h1 {
+  font-size:
+}
+</style>
+</head>
+<body>
+
+<p>A var element is displayed like this:</p>
+
+<var>Variable</var>
+
+<p>Change the default CSS settings to see the effect.</p>
+
+</body>
+</html>
+
 <h1>{{ request.session.round }}</h1>
-<h1>{{  round_page.headline_size }}</h1>
+<h1>{{  pages.page.headline_size }}</h1>
 
 <link rel="stylesheet" type="text/css" href="{% static 'page_generator/style.css' %}">
 
-<h1>{% lorem 6 w %}</h1>
 
-{% lorem 3 %}
-
-
-{% lorem 3 p %}
-
-<script>
+<!-- <script>
   setTimeout(goToNextPage, 3000);
   function goToNextPage() {
   	location.href = "http://127.0.0.1:8000/page_generator/page_rating"
   }
-</script>
+</script> -->

@@ -26,7 +26,7 @@ class PageRatingCreateForm(forms.ModelForm):
     class Meta:
         model = PageRating
         fields = '__all__'
-        exclude = ['page',]
+        exclude = ['page', ]
         widgets = {
             'credibility': forms.RadioSelect(),
         }
@@ -40,4 +40,5 @@ class PageRatingCreateForm(forms.ModelForm):
             'colors': ('Farby použité na stránke'),
             'text_length': ('Dĺžka textu'),
             'hyperlink_count': ('Počet hypertextových odkazov'),
+            'page_layout': ('Rozloženie elementov na stránke'),
         }

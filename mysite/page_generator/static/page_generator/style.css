@@ -4,3 +4,59 @@
   width: 50px;
   margin-right: 20px;
 }
+
+h1:first-letter {
+  text-transform: capitalize;
+}
+
+
+.headline_size_1 h1 {
+  font-size: 38pt;
+}
+.headline_size_2 h1 {
+  font-size: 48pt;
+}
+.headline_size_3 h1 {
+  font-size: 56pt;
+}
+
+.font_style_1 {
+  font-family: "Times New Roman", Times, serif;
+}
+.font_style_2 {
+  font-family: Helvetica, sans-serif;
+}
+.font_style_3 {
+  font-family: Arial, sans-serif;
+}
+
+.font_size_1 p {
+  font-size: small;
+}
+.font_size_2 p {
+  font-size: medium;
+}
+.font_size_3 p {
+  font-size: large;
+}
+
+.color_1 {
+  background-color: beige;
+}
+.color_2 {
+  background-color: bisque;
+}
+.color_3 {
+  background-color: burlywood;
+}
+
+
+.color_1 h1 {
+  background-color: bisque;
+}
+.color_2 h1 {
+  background-color: burlywood;
+}
+.color_3 h1 {
+  background-color: sandybrown;
+}

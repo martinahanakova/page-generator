@@ -26,7 +26,7 @@ SECRET_KEY = 'ta)z3tuepo*$h2+htw_5i+wky9d)tf%15c26b&2b^=qez9opmt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['Matin-Macbook.local', '192.168.0.11']
 
 
 # Application definition
