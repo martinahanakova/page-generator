@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Participant, Page, PageRating
+from .models import Participant, PageRating
 
 
 class ParticipantCreateForm(forms.ModelForm):
@@ -26,6 +26,7 @@ class PageRatingCreateForm(forms.ModelForm):
     class Meta:
         model = PageRating
         fields = '__all__'
+        exclude = ['page', ]
         widgets = {
             'credibility': forms.RadioSelect(),
         }
@@ -39,10 +40,5 @@ class PageRatingCreateForm(forms.ModelForm):
             'colors': ('Farby použité na stránke'),
             'text_length': ('Dĺžka textu'),
             'hyperlink_count': ('Počet hypertextových odkazov'),
+            'page_layout': ('Rozloženie elementov na stránke'),
         }
-
-
-class PageForm(forms.ModelForm):
-    class Meta:
-        model=Page
-        fields = '__all__'

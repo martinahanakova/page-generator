@@ -68,13 +68,16 @@ class Page(models.Model):
         GROUP_1 = '1'
         GROUP_2 = '2'
         GROUP_3 = '3'
+        GROUP_4 = '4'
 
     class StyleChoices(models.IntegerChoices):
         STYLE_1 = '1'
         STYLE_2 = '2'
         STYLE_3 = '3'
+        STYLE_4 = '4'
 
     participant = models.ForeignKey(Participant, on_delete=models.CASCADE)
+    order = models.IntegerField()
     headline_size = models.IntegerField(
         choices=ParameterChoices.choices,
         default=None,
@@ -129,3 +132,5 @@ class PageRating(models.Model):
     colors = models.BooleanField(default=False)
     text_length = models.BooleanField(default=False)
     hyperlink_count = models.BooleanField(default=False)
+    page_layout = models.BooleanField(default=False)
+
