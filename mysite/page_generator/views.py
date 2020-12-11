@@ -64,12 +64,33 @@ class PageRatingView(generic.edit.CreateView):
 
     def get_success_url(self):
         # set to value number of rounds + 1
-        if self.request.session['round'] == 6:
-            return reverse('page_generator:index')
+        if self.request.session['round'] == 3:
+            return reverse('page_generator:link_page')
         else:
             return reverse('page_generator:page')
+
+
+class PageLinkView(generic.ListView):
+    model = Participant
+    template_name = 'page_generator/link_page.html'
+
+    context_object_name = 'participants'
+
+    def get_queryset(self):
+        participant_id = self.request.session['participant']
+        print(participant_id)
+        participants = Participant.objects.filter(id=participant_id)
+
+        print(participants)
+
+        return participants
+
+    def start(request):
+        return HttpResponseRedirect('/page_generator/index')
 
 
 class IndexView(generic.ListView):
     template_name = 'page_generator/index.html'
     model = Participant
+
+# https://docs.google.com/forms/d/e/1FAIpQLSdfXlxtegjEVSWMXdJnUM1Iij2x5hCvRb1YjGvU3k3nFwRq0Q/viewform?usp=pp_url&entry.918932795=21

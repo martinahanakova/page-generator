@@ -68,11 +68,13 @@ class Page(models.Model):
         GROUP_1 = '1'
         GROUP_2 = '2'
         GROUP_3 = '3'
+        GROUP_4 = '4'
 
     class StyleChoices(models.IntegerChoices):
         STYLE_1 = '1'
         STYLE_2 = '2'
         STYLE_3 = '3'
+        STYLE_4 = '4'
 
     participant = models.ForeignKey(Participant, on_delete=models.CASCADE)
     order = models.IntegerField()
