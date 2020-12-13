@@ -8,10 +8,11 @@ class ParticipantCreateForm(forms.ModelForm):
         model = Participant
         fields = ['gender', 'age', 'education', 'student', 'profession']
         widgets = {
-            'gender': forms.RadioSelect(),
-            'age': forms.RadioSelect(),
-            'education': forms.RadioSelect(),
-            'profession': forms.RadioSelect(),
+            'gender': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+            'age': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+            'education': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+            'profession': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+            'student': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
         }
         labels = {
             'gender': ('Pohlavie'),
@@ -28,7 +29,7 @@ class PageRatingCreateForm(forms.ModelForm):
         fields = '__all__'
         exclude = ['page', ]
         widgets = {
-            'credibility': forms.RadioSelect(),
+            'credibility': forms.RadioSelect(attrs={'class': 'form-check-input'}),
         }
         labels = {
             'credibility': ('Dôveryhodnosť'),

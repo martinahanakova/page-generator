@@ -1,23 +1,40 @@
 {% load static %}
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="{% static 'page_generator/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'page_generator/questionaire.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-<h1>Demografický dotazník</h1>
+<div class="container">
+  <h1 class="display-3 text-center mb-5 mt-3">Demografický dotazník</h1>
 
-<form method="post">
-{% csrf_token %}
+  <form method="post">
+  {% csrf_token %}
 
-{% for field in form.visible_fields %}
-  {% if field.label != 'Session id' %}
-    <h2>{{ field.label }}</h2>
-      <p>
-      {% for radio in field %}
-        {{ radio }}
-        {% if field.name == 'student' %}<label for="student">Áno</label>{% endif %}
-        <br/>
-      {% endfor %}
-      </p>
-  {% endif %}
-{% endfor %}
+  {% for field in form.visible_fields %}
+    {% if field.label != 'Session id' %}
+      <div class="card mb-3">
+        <div class="card-header">
+          <h5 class="card-title mb-2 mt-2">{{ field.label }}</h5>
+        </div>
+        <div class="card-body">
+          {% for radio in field %}
+            {% if field.name == 'student' %}
+              <div class="form-check">
+                {{ radio }}
+                <label class="form-check-label">
+                  Áno
+                </label>
+              </div>
+            {% else %}
+                <div class="form-check">
+                  {{ radio }}
+                </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
 
-<input type="submit" value="Odpovedať">
+  <input type="submit" class="btn btn-primary float-end w-100" value="Odpovedať">
+</div>
+
