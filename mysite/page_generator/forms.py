@@ -30,6 +30,15 @@ class PageRatingCreateForm(forms.ModelForm):
         exclude = ['page', ]
         widgets = {
             'credibility': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+            'headline_length': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'headline_size': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'font_style': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'font_size': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'image_count': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'colors': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'text_length': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'hyperlink_count': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'page_layout': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
         }
         labels = {
             'credibility': ('Dôveryhodnosť'),

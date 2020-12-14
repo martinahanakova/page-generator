@@ -58,11 +58,11 @@
         {% endif %}
 
         {% if page.image_count > 1 %}
-            <img src="../../static/page_generator/images/image_2.jpeg" width="200" height="300">
+            <img src="../../static/page_generator/images/image_2.jpeg" class="w-100">
         {% endif %}
 
         {% if page.image_count > 2 %}
-            <img src="../../static/page_generator/images/image_3.jpeg" width="200" height="300">
+            <img src="../../static/page_generator/images/image_3.jpeg" class="w-100">
         {% endif %}
 
         <p>
@@ -98,7 +98,7 @@
         {% endif %}
 
          {% if page.image_count > 1 %}
-            <img src="../../static/page_generator/images/image_4.jpeg" width="200" height="300">
+            <img src="../../static/page_generator/images/image_4.jpeg" class="w-100">
         {% endif %}
 
         {% if page.text_length > 2 %}
@@ -139,8 +139,8 @@
         {% endif %}
 
          {% if page.image_count > 2 %}
-            <img src="../../static/page_generator/images/image_5.jpeg" width="200" height="300">
-            <img src="../../static/page_generator/images/image_6.jpeg" width="200" height="300">
+            <img src="../../static/page_generator/images/image_5.jpeg" class="w-100">
+            <img src="../../static/page_generator/images/image_6.jpeg" class="w-100">
         {% endif %}
         </div>
         </body>
@@ -149,9 +149,9 @@
     <p>No page available.</p>
 {% endif %}
 
-<!--<script>
+<script>
   setTimeout(goToNextPage, 3000);
   function goToNextPage() {
   	location.href = "http://127.0.0.1:8000/page_generator/page_rating"
   }
-</script>-->
+</script>
