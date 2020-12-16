@@ -26,7 +26,7 @@ SECRET_KEY = 'ta)z3tuepo*$h2+htw_5i+wky9d)tf%15c26b&2b^=qez9opmt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['Matin-Macbook.local', '192.168.0.11', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['Matin-Macbook.local', '192.168.0.11', '0.0.0.0', '127.0.0.1', 'page-generator.herokuapp.com']
 
 
 # Application definition
