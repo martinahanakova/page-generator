@@ -8,10 +8,11 @@ class ParticipantCreateForm(forms.ModelForm):
         model = Participant
         fields = ['gender', 'age', 'education', 'student', 'profession']
         widgets = {
-            'gender': forms.RadioSelect(),
-            'age': forms.RadioSelect(),
-            'education': forms.RadioSelect(),
-            'profession': forms.RadioSelect(),
+            'gender': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+            'age': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+            'education': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+            'profession': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+            'student': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
         }
         labels = {
             'gender': ('Pohlavie'),
@@ -28,7 +29,16 @@ class PageRatingCreateForm(forms.ModelForm):
         fields = '__all__'
         exclude = ['page', ]
         widgets = {
-            'credibility': forms.RadioSelect(),
+            'credibility': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+            'headline_length': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'headline_size': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'font_style': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'font_size': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'image_count': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'colors': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'text_length': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'hyperlink_count': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'page_layout': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
         }
         labels = {
             'credibility': ('Dôveryhodnosť'),

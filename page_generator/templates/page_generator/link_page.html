@@ -1,15 +1,27 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'page_generator/style.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
 
-<h1>Pre pokračovanie v experimente kliknine na odkaz nižšie</h1>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron mt-3">
+          <h1 class="display-4">Pre pokračovanie v experimente kliknite na odkaz nižšie</h1>
+          <hr class="my-4">
+          <p class="lead">Zobrazí sa vám dotazník. Prosím vyplňte tento dotazník</p>
+        </div>
 
-<h2>Zobrazí sa vám dotazník. Prosím vyplňte tento dotazník</h2>
-
-{% if participants %}
-    {% for participant in participants %}
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfXlxtegjEVSWMXdJnUM1Iij2x5hCvRb1YjGvU3k3nFwRq0Q/viewform?usp=pp_url&entry.918932795={{participant.id}}">Vyplniť dotazník</a>
-    {% endfor %}
-{% else %}
-    <p>No such participant.</p>
-{% endif %}
+        {% if participants %}
+            {% for participant in participants %}
+                <a class="btn btn-primary btn-lg w-100" href="https://docs.google.com/forms/d/e/1FAIpQLSdfXlxtegjEVSWMXdJnUM1Iij2x5hCvRb1YjGvU3k3nFwRq0Q/viewform?usp=pp_url&entry.918932795={{participant.id}}">
+                    Vyplniť dotazník
+                </a>
+            {% endfor %}
+        {% else %}
+            <p>No such participant.</p>
+        {% endif %}
+    </div>
+</body>

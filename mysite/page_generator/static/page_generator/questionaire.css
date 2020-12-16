@@ -1,0 +1,10 @@
+.radioholder {
+  display: inline-block;
+  justify-content: space-between;
+  width: 50px;
+  margin-right: 20px;
+}
+
+.form-check {
+  margin: 10px 0;
+}

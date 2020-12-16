@@ -22,10 +22,10 @@ h1:first-letter {
 .font_size_1 p, li, a {
   font-size: 13pt;
 }
-.font_size_2 p {
+.font_size_2 p, li, a {
   font-size: 16pt;
 }
-.font_size_3 p {
+.font_size_3 p, li, a {
   font-size: 19pt;
 }
 
