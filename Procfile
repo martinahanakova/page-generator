@@ -1,1 +1,1 @@
-web: gunicorn page_generator.wsgi
+web: gunicorn mysite.wsgi
