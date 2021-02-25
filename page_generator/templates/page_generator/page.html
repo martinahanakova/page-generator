@@ -13,7 +13,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark color_{{page.colors}}">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">{% lorem 2 w random %}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -150,8 +150,8 @@
 {% endif %}
 
 <script>
-  setTimeout(goToNextPage, 3000);
+  setTimeout(goToNextPage, 12000);
   function goToNextPage() {
-  	location.href = "/page_generator/page_rating"
+  	location.href = "/page_generator/page_rating";
   }
 </script>

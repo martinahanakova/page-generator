@@ -6,7 +6,7 @@ from .models import Participant, PageRating
 class ParticipantCreateForm(forms.ModelForm):
     class Meta:
         model = Participant
-        fields = ['gender', 'age', 'education', 'student', 'profession']
+        fields = ['gender', 'age', 'education', 'student']
         widgets = {
             'gender': forms.RadioSelect(attrs={'class': 'form-check-input'}),
             'age': forms.RadioSelect(attrs={'class': 'form-check-input'}),
@@ -19,7 +19,6 @@ class ParticipantCreateForm(forms.ModelForm):
             'age': ('Vek'),
             'education': ('Dosiahnuté vzdelanie'),
             'student': ('Ste študent?'),
-            'profession': ('Oblasť profesie'),
         }
 
 

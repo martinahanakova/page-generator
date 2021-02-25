@@ -32,6 +32,7 @@ class Participant(models.Model):
         CONSTRUCTION = 'C', 'Stavbeníctvo'
         RESTAURANTS = 'R', 'Reštauračné služby'
         BUSINESS = 'B', 'Podnikanie'
+        OTHER = 'O', 'Iné'
 
     gender = models.CharField(
         max_length=7,
@@ -52,7 +53,7 @@ class Participant(models.Model):
     profession = models.CharField(
         max_length=30,
         choices=ProfessionChoices.choices,
-        default=None,
+        default="O",
     )
     session_id = models.CharField(max_length=500)
 
