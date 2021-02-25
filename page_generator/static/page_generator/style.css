@@ -67,3 +67,94 @@ h1:first-letter {
 .color_4 h1 {
   background-color: #FFE2AC;
 }
+
+@font-face {
+	font-family: "Helvetica";
+	src: url("../../static/page_generator/fonts/helvetica.eot") format("embedded-opentype"),
+	url("../../static/page_generator/fonts/helvetica.woff") format("woff"),
+	url("../../static/page_generator/fonts/helvetica.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 300;
+	font-stretch: normal;
+	font-display: fallback
+}
+
+@font-face {
+	font-family: "Greta";
+	src: url("../../static/page_generator/fonts/greta-light-normal.woff2") format("woff2"),
+	url("../../static/page_generator/fonts/greta-light-normal.woff") format("woff"),
+	url("../../static/page_generator/fonts/greta-light-normal.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 300;
+	font-stretch: normal;
+	font-display: fallback
+}
+
+@font-face {
+	font-family: "Greta";
+	src: url("../../static/page_generator/fonts/greta-light-italic.woff2") format("woff2"),
+	url("../../static/page_generator/fonts/greta-light-italic.woff") format("woff"),
+	url("../../static/page_generator/fonts/greta-light-italic.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 300;
+	font-stretch: normal;
+	font-display: fallback
+}
+
+@font-face {
+	font-family: "Greta";
+	src: url("../../static/page_generator/fonts/greta-medium-normal.woff2") format("woff2"),
+	url("../../static/page_generator/fonts/greta-medium-normal.woff") format("woff"),
+	url("../../static/page_generator/fonts/greta-medium-normal.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 500;
+	font-stretch: normal;
+	font-display: fallback
+}
+
+@font-face {
+	font-family: "Greta";
+	src: url("../../static/page_generator/fonts/greta-display-medium.woff2") format("woff2"),
+	url("../../static/page_generator/fonts/greta-display-medium.woff") format("woff"),
+	url("../../static/page_generator/fonts/greta-display-medium.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 500;
+	font-stretch: normal;
+	font-display: fallback
+}
+
+@font-face {
+	font-family: 'Lumin Serif';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../../static/page_generator/fonts/lumin__serif__3.woff") format("woff"),
+	url("../../static/page_generator/fonts/lumin__serif__3.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: 'Lumin Serif';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../../static/page_generator/fonts/lumin__serif__3i.woff") format("woff"),
+	url("../../static/page_generator/fonts/lumin__serif__3i.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: 'Lumin Serif';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("../../static/page_generator/fonts/lumin__serif__5.woff") format("woff"),
+	url("../../static/page_generator/fonts/lumin__serif__5.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: 'Lumin Serif';
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+	src: url("../../static/page_generator/fonts/lumin__serif__5i.woff") format("woff"),
+	url("../../static/page_generator/fonts/lumin__serif__5i.ttf") format("truetype");
+}
