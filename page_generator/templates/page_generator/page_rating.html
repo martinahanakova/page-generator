@@ -9,6 +9,7 @@
 <body>
   <div class="container">
     <h1 class="display-3 text-center mb-5 mt-3">Vyplňte prosím nasledujúci dotazník</h1>
+    <p class="lead">Nevracajte sa na predchádzajúcu stránku. Dotazník vyplňte na základe toho, čo ste stihli vidieť a vášho dojmu.</p>
     <form method="post">
     {% csrf_token %}
 
@@ -19,16 +20,11 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="d-flex justify-content-between">
-            <span>Úplne nedôveryhodný</span>
-            <span>Úplne dôveryhodný</span>
-          </div>
-
-          <div class="d-flex justify-content-between mt-3">
-            {% for value, text in form.credibility.field.choices %}
-              <input name="credibility" type="radio" id="radio_{{ value }}" value={{ value }}>
+            {% for value in form.credibility %}
+              <div class="form-check">
+              {{ value }}
+              </div>
             {% endfor %}
-          </div>
         </div>
       </div>
 

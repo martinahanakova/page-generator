@@ -4,12 +4,9 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
 <div class="container">
-  <h1 class="display-3 text-center mb-5 mt-3">Demografický dotazník</h1>
+  <h1 class="display-3 text-center mb-5 mt-3">Krok 1: Demografický dotazník</h1>
   <hr class="my-4">
-  <p class="lead">Som študentkou fakulty informatiky a robím výskum na tému vnímania dôveryhodnosti správ na webe. Tento výskum robím v rámci svojej
-    diplomovej práce. Dotazník vám zaberie približne 10-15 minút. Na začiatok by som od vás potrebovala pár demografickým údajov, ďalšie pokyny pokyny
-    budú zobrazené po odoslaní dotazníka. Ďakujem veľmi pekne za ochotu zúčastniť sa na výskume. Pre vyplnenie dotazníka prosím použite MOBILNÝ TELEFÓN.
-    Ak nemáte možnosť použiť mobilný telefón, dotazník prosím nevypĺňajte.</p>
+  <p class="lead">Na začiatok by som od vás potrebovala pár demografických údajov.</p>
 
   <form method="post">
   {% csrf_token %}
@@ -22,18 +19,9 @@
         </div>
         <div class="card-body">
           {% for radio in field %}
-            {% if field.name == 'student' %}
-              <div class="form-check">
-                {{ radio }}
-                <label class="form-check-label">
-                  Áno
-                </label>
-              </div>
-            {% else %}
-                <div class="form-check">
-                  {{ radio }}
-                </div>
-            {% endif %}
+            <div class="form-check">
+              {{ radio }}
+            </div>
           {% endfor %}
         </div>
       </div>

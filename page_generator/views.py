@@ -8,6 +8,12 @@ from .models import Participant, Page, PageRating
 from .forms import ParticipantCreateForm, PageRatingCreateForm
 
 
+class IntroductionView(generic.base.TemplateView):
+    template_name = 'page_generator/introduction.html'
+
+    def start(request):
+        return HttpResponseRedirect('/page_generator/questionaire')
+
 class QuestionaireView(generic.edit.CreateView):
     model = Participant
     form_class = ParticipantCreateForm
@@ -64,7 +70,7 @@ class PageRatingView(generic.edit.CreateView):
 
     def get_success_url(self):
         # set to value number of rounds + 1
-        if self.request.session['round'] == 11:
+        if self.request.session['round'] == 12:
             return reverse('page_generator:link_page')
         else:
             return reverse('page_generator:page')

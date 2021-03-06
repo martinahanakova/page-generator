@@ -5,6 +5,7 @@ from . import views
 
 app_name = 'page_generator'
 urlpatterns = [
+    path('introduction/', views.IntroductionView.as_view(), name='introduction'),
     path('questionaire/', views.QuestionaireView.as_view(), name='questionaire'),
     path('start_page/', views.StartView.as_view(), name='start_page'),
     path('page/', views.PageView.as_view(), name='page'),

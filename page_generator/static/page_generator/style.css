@@ -10,22 +10,22 @@ h1:first-letter {
 }
 
 .headline_size_1 h1 {
-  font-size: 30pt;
+  font-size: 22pt;
 }
 .headline_size_2 h1 {
-  font-size: 38pt;
+  font-size: 30pt;
 }
 .headline_size_3 h1 {
-  font-size: 46pt;
+  font-size: 38pt;
 }
 
-.font_size_1 p, li, a {
+.font_size_1 p, .font_size_1 ul, .font_size_1 li, .font_size_1 a {
   font-size: 13pt;
 }
-.font_size_2 p, li, a {
+.font_size_2 p, .font_size_2 ul, .font_size_2 li, .font_size_2 a {
   font-size: 16pt;
 }
-.font_size_3 p, li, a {
+.font_size_3 p, .font_size_3 ul, .font_size_3 li, .font_size_3 a {
   font-size: 19pt;
 }
 
@@ -42,30 +42,30 @@ h1:first-letter {
   font-family: "Greta", serif;
 }
 
-.color_1 {
+nav.color_1 {
   background-color: #00247B;
 }
-.color_2 {
+nav.color_2 {
   background-color: #026FDF;
 }
-.color_3 {
+nav.color_3 {
   background-color: #CB4E01;
 }
-.color_4 {
+nav.color_4 {
   background-color: #FE9554;
 }
 
-.color_1 h1 {
-  background-color: #CADFF0;
+.color_1 a {
+  color: #00247B;
 }
-.color_2 h1 {
-  background-color: #CDEDF9;
+.color_2 a {
+  color: #026FDF;
 }
-.color_3 h1 {
-  background-color: #FFE6d7;
+.color_3 a {
+  color: #CB4E01;
 }
-.color_4 h1 {
-  background-color: #FFE2AC;
+.color_4 a {
+  color: #FE9554;
 }
 
 @font-face {

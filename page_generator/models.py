@@ -26,6 +26,10 @@ class Participant(models.Model):
         UNIVERSITY = '4', 'Vysokoškolské'
         NONE = '0', 'Žiadne'
 
+    class StudentChoices(models.TextChoices):
+        YES = '1', 'Áno'
+        NO = '0', 'Nie'
+
     class ProfessionChoices(models.TextChoices):
         HEALTHCARE = 'H', 'Zdravotníctvo'
         EDUCATION = 'E', 'Školstvo'
@@ -49,7 +53,11 @@ class Participant(models.Model):
         choices=EducationChoices.choices,
         default=None,
     )
-    student = models.BooleanField(default=False)
+    student = models.CharField(
+        max_length=3,
+        choices=StudentChoices.choices,
+        default=None,
+    )
     profession = models.CharField(
         max_length=30,
         choices=ProfessionChoices.choices,
@@ -112,13 +120,13 @@ class Page(models.Model):
 class PageRating(models.Model):
 
     class CredibilityChoices(models.IntegerChoices):
-        UNCREDIBLE_3 = -3, 'Úplne nedôveryhodný'
-        UNCREDIBLE_2 = -2, 'Dosť nedôveryhodný'
-        UNCREDIBLE_1 = -1, 'Trochu nedôveryhodný'
-        DONT_KNOW = 0, 'Neviem posúdiť'
-        CREDIBLE_1 = 1, 'Trochu dôveryhodný'
-        CREDIBLE_2 = 2, 'Dosť dôveryhodný'
         CREDIBLE_3 = 3, 'Úplne dôveryhodný'
+        CREDIBLE_2 = 2, 'Dôveryhodný'
+        CREDIBLE_1 = 1, 'Skôr dôveryhodný'
+        DONT_KNOW = 0, 'Neviem posúdiť'
+        UNCREDIBLE_1 = -1, 'Skôr nedôveryhodný'
+        UNCREDIBLE_2 = -2, 'Nedôveryhodný'
+        UNCREDIBLE_3 = -3, 'Úplne nedôveryhodný'
 
     page = models.ForeignKey(Page, on_delete=models.CASCADE)
     credibility = models.IntegerField(

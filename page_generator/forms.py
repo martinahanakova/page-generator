@@ -12,7 +12,7 @@ class ParticipantCreateForm(forms.ModelForm):
             'age': forms.RadioSelect(attrs={'class': 'form-check-input'}),
             'education': forms.RadioSelect(attrs={'class': 'form-check-input'}),
             'profession': forms.RadioSelect(attrs={'class': 'form-check-input'}),
-            'student': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'student': forms.RadioSelect(attrs={'class': 'form-check-input'}),
         }
         labels = {
             'gender': ('Pohlavie'),
@@ -48,6 +48,6 @@ class PageRatingCreateForm(forms.ModelForm):
             'image_count': ('Počet obrázkov'),
             'colors': ('Farby použité na stránke'),
             'text_length': ('Dĺžka textu'),
-            'hyperlink_count': ('Počet hypertextových odkazov'),
+            'hyperlink_count': ('Počet linkov (hypertextových odkazov)'),
             'page_layout': ('Rozloženie elementov na stránke'),
         }

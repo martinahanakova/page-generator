@@ -11,7 +11,7 @@ import math
 
 @receiver(post_save, sender=Participant, dispatch_uid='participant_updated')
 def generateParameters(sender, instance, created, **kwargs):
-    rounds = 10
+    rounds = 11
     if not created:
 
         for round in range(rounds):
