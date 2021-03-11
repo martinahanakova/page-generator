@@ -1,11 +1,13 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 
 from .models import Participant, Page, PageRating
 
 from .forms import ParticipantCreateForm, PageRatingCreateForm
+import logging
+
+logger = logging.getLogger('testlogger')
 
 
 class IntroductionView(generic.base.TemplateView):
@@ -14,6 +16,7 @@ class IntroductionView(generic.base.TemplateView):
     def start(request):
         return HttpResponseRedirect('/page_generator/questionaire')
 
+
 class QuestionaireView(generic.edit.CreateView):
     model = Participant
     form_class = ParticipantCreateForm
@@ -21,6 +24,7 @@ class QuestionaireView(generic.edit.CreateView):
     template_name = 'page_generator/questionaire.html'
 
     def form_valid(self, form):
+        logger.info('This is a simple log message')
         object = form.save()
         self.request.session['participant'] = object.id
         self.request.session['round'] = 1
