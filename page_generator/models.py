@@ -11,12 +11,12 @@ class Participant(models.Model):
         MALE = 'M', 'Muž'
 
     class AgeChoices(models.TextChoices):
-        TEENS = 'T', '15-20'
-        YOUNG = 'Y', '20-25'
-        ADULTS_1 = 'A1', '25-35'
-        ADULTS_2 = 'A2', '35-45'
-        ADULTS_3 = 'A3', '45-55'
-        ADULTS_4 = 'A4', '55-65'
+        TEENS = 'T', '15-19'
+        YOUNG = 'Y', '20-24'
+        ADULTS_1 = 'A1', '25-34'
+        ADULTS_2 = 'A2', '35-44'
+        ADULTS_3 = 'A3', '45-54'
+        ADULTS_4 = 'A4', '55-64'
         SENIORS = 'S', '65+'
 
     class EducationChoices(models.TextChoices):
@@ -142,4 +142,28 @@ class PageRating(models.Model):
     text_length = models.BooleanField(default=False)
     hyperlink_count = models.BooleanField(default=False)
     page_layout = models.BooleanField(default=False)
+    scroll_log = models.TextField(default=None, null=True)
+    time_start = models.IntegerField(default=0)
+    time_end = models.IntegerField(default=0)
+
+
+class Logs(models.Model):
+
+    class LogChoices(models.TextChoices):
+        CREDIBILITY_START = 'PS', 'Zobrazenie hodnotenej stránky'
+        CREDIBILITY_END = 'CE', 'Odoslanie dotazníka dôveryhodnosti'
+        MEDIAL_LITERACY_START = 'MS', 'Začiatok dotazníka mediálnej gramotnosti'
+
+    participant = models.IntegerField()
+    page = models.IntegerField(default=None)
+    timestamp = models.TextField(
+        max_length=50
+    )
+    log = models.CharField(
+        max_length=30,
+        choices=LogChoices.choices,
+        default=None,
+    )
+
+
 

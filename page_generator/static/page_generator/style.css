@@ -158,3 +158,15 @@ nav.color_4 {
 	src: url("../../static/page_generator/fonts/lumin__serif__5i.woff") format("woff"),
 	url("../../static/page_generator/fonts/lumin__serif__5i.ttf") format("truetype");
 }
+
+.order {
+    position: fixed;
+    top: 65px;
+    right: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50px;
+    height: 24px;
+    background-color: #ffffff;
+}

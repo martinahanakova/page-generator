@@ -1,15 +1,15 @@
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'page_generator/style.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'page_generator/timer.css' %}">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'page_generator/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'page_generator/timer.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="{% static 'page_generator/scroll_logger.js' %}" charset="utf-8"></script>
+</head>
 
 {% if pages %}
     {% for page in pages %}
-        <head>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-        </head>
         <body class="font_style_{{page.font_style}} font_size_{{page.font_size}} headline_size_{{page.headline_size}} color_{{page.colors}}">
 
         <nav class="navbar navbar-expand-lg navbar-dark color_{{page.colors}}">
@@ -22,8 +22,11 @@
           </div>
         </nav>
 
+
         <div id="timer"></div>
         <script src="{% static 'page_generator/timer.js' %}" charset="utf-8"></script>
+
+        <div class="order">{{ page.order }}/11</div>
 
         <div class="container">
 
@@ -174,6 +177,13 @@
             </p>
         {% endif %}
         </div>
+
+        <form id="formScrollLog" style="display: none;" method="post" action="/page_generator/page_rating/">
+               {% csrf_token %}
+            <input name="time_start" id="formTimeStartField">
+            <input name="scroll_log" id="formScrollLogField">
+        </form>
+
         </body>
     {% endfor %}
 {% else %}

@@ -41,11 +41,14 @@ document.getElementById("timer").innerHTML = `
   </span>
 </div>
 `;
-
-window.onload = startTimer;
+window.addEventListener('load', startTimer);
 
 function onTimesUp() {
-  location.href = "/page_generator/page_rating";
+  //location.href = "/page_generator/page_rating";
+  formScrollLogField.value = JSON.stringify(scrollLog);
+  formTimeStartField.value = Date.now();
+  formScrollLog.submit();
+
 }
 
 function startTimer() {

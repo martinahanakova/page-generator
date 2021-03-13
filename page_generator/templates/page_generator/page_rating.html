@@ -10,7 +10,12 @@
   <div class="container">
     <h1 class="display-3 text-center mb-5 mt-3">Vyplňte prosím nasledujúci dotazník</h1>
     <p class="lead">Nevracajte sa na predchádzajúcu stránku. Dotazník vyplňte na základe toho, čo ste stihli vidieť a vášho dojmu.</p>
-    <form method="post">
+    <script>
+      function form_fill_time() {
+        id_time_end.value = Date.now();
+      }
+    </script>
+    <form method="post" onsubmit="form_fill_time()">
     {% csrf_token %}
 
       <div class="card mb-3">
@@ -48,6 +53,9 @@
           {% endfor %}
         </div>
       </div>
+          {% for field in form.hidden_fields %}
+            {{ field }}
+          {% endfor %}
       <input type="submit" class="btn btn-lg btn-primary w-100 mb-5" value="Odpovedať">
     </form>
   </div>

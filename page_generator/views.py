@@ -2,13 +2,16 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
 
-from .models import Participant, Page, PageRating
+import time
+
+from .models import Participant, Page, PageRating, Logs
 
 from .forms import ParticipantCreateForm, PageRatingCreateForm
+
 import logging
 
-logger = logging.getLogger('testlogger')
-
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
 
 class IntroductionView(generic.base.TemplateView):
     template_name = 'page_generator/introduction.html'
@@ -24,7 +27,6 @@ class QuestionaireView(generic.edit.CreateView):
     template_name = 'page_generator/questionaire.html'
 
     def form_valid(self, form):
-        logger.info('This is a simple log message')
         object = form.save()
         self.request.session['participant'] = object.id
         self.request.session['round'] = 1
@@ -88,10 +90,12 @@ class PageLinkView(generic.ListView):
 
     def get_queryset(self):
         participant_id = self.request.session['participant']
-        print(participant_id)
         participants = Participant.objects.filter(id=participant_id)
 
-        print(participants)
+        # log start of media literacy questionaire
+        timestamp = time.time()
+        log = Logs(participant=participant_id, page=0, timestamp=timestamp, log='MS')
+        log.save()
 
         return participants
 

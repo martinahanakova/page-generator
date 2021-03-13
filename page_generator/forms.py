@@ -38,6 +38,9 @@ class PageRatingCreateForm(forms.ModelForm):
             'text_length': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
             'hyperlink_count': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
             'page_layout': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'scroll_log': forms.HiddenInput(),
+            'time_start': forms.HiddenInput(),
+            'time_end': forms.HiddenInput(),
         }
         labels = {
             'credibility': ('Dôveryhodnosť'),
