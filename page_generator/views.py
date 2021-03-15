@@ -8,10 +8,6 @@ from .models import Participant, Page, PageRating, Logs
 
 from .forms import ParticipantCreateForm, PageRatingCreateForm
 
-import logging
-
-# Get an instance of a logger
-logger = logging.getLogger(__name__)
 
 class IntroductionView(generic.base.TemplateView):
     template_name = 'page_generator/introduction.html'
@@ -69,6 +65,10 @@ class PageRatingView(generic.edit.CreateView):
     form_class = PageRatingCreateForm
     template_name = 'page_generator/page_rating.html'
 
+    def form_invalid(self, form):
+        response = super().form_invalid(form)
+        return response
+
     def form_valid(self, form):
         page = Page.objects.get(pk=self.request.session['page_id'])
         form.instance.page = page
@@ -106,5 +106,6 @@ class PageLinkView(generic.ListView):
 class IndexView(generic.ListView):
     template_name = 'page_generator/index.html'
     model = Participant
+
 
 # https://docs.google.com/forms/d/e/1FAIpQLSdfXlxtegjEVSWMXdJnUM1Iij2x5hCvRb1YjGvU3k3nFwRq0Q/viewform?usp=pp_url&entry.918932795=21

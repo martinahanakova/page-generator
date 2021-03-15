@@ -143,8 +143,8 @@ class PageRating(models.Model):
     hyperlink_count = models.BooleanField(default=False)
     page_layout = models.BooleanField(default=False)
     scroll_log = models.TextField(default=None, null=True)
-    time_start = models.IntegerField(default=0)
-    time_end = models.IntegerField(default=0)
+    time_start = models.BigIntegerField(default=0)
+    time_end = models.BigIntegerField(default=0)
 
 
 class Logs(models.Model):

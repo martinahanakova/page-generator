@@ -42,7 +42,7 @@
         <p>
             {% lorem 3 random %}
             {% if page.hyperlink_count > 2 %}
-                <a href="url">{% lorem 4 w random %}</a>
+                <a href="#">{% lorem 4 w random %}</a>
             {%  endif %}
         </p>
         {% lorem 1 p random %}
@@ -51,9 +51,9 @@
             <p>
                 {% lorem 10 w random %}
                 {% if page.hyperlink_count > 1 %}
-                        <a href="url">{% lorem 3 w random %}</a>
+                        <a href="#">{% lorem 3 w random %}</a>
                         {% lorem 1 random %}
-                        <a href="url">{% lorem 5 w random %}</a>
+                        <a href="#">{% lorem 5 w random %}</a>
                 {% endif %}
                 {% lorem 2 random %}
             </p>
@@ -63,8 +63,8 @@
         {% if page.text_length == 1  and page.hyperlink_count > 1 %}
             <p>
                 <ul>
-                    <li><a href="url">{% lorem 3 w random %}</a></li>
-                    <li><a href="url">{% lorem 5 w random %}</a></li>
+                    <li><a href="#">{% lorem 3 w random %}</a></li>
+                    <li><a href="#">{% lorem 5 w random %}</a></li>
                 </ul>
             </p>
         {% endif %}
@@ -86,7 +86,7 @@
         <p>
             {% lorem 4 random %}
             {% if page.hyperlink_count > 2 %}
-                <a href="url">{% lorem 4 w random %}</a>
+                <a href="#">{% lorem 4 w random %}</a>
                 {% lorem 5 w random %}
             {% endif%}
         </p>
@@ -95,14 +95,14 @@
             <p>
                 {% if page.hyperlink_count > 2 %}
                     {% lorem 10 w random %}
-                    <a href="url">{% lorem 8 w random %}</a>
+                    <a href="#">{% lorem 8 w random %}</a>
                 {% endif %}
                 {% lorem 2 random %}
             </p>
             <p>
                 {% lorem 3 random %}
                 {% if page.hyperlink_count > 2 %}
-                    <a href="url">{% lorem 10 w random %}</a>
+                    <a href="#">{% lorem 10 w random %}</a>
                     {% lorem 30 w random %}
                 {% endif %}
             </p>
@@ -111,8 +111,8 @@
         {% if page.text_length == 1  and page.hyperlink_count > 2 %}
             <p>
                 <ul>
-                    <li>{% lorem 10 w random %}<a href="url">{% lorem 8 w random %}</a></li>
-                    <li><a href="url">{% lorem 10 w random %}</a>{% lorem 30 w random %}</li>
+                    <li>{% lorem 10 w random %}<a href="#">{% lorem 8 w random %}</a></li>
+                    <li><a href="#">{% lorem 10 w random %}</a>{% lorem 30 w random %}</li>
                 </ul>
             </p>
         {% endif %}
@@ -130,14 +130,14 @@
             <p>
                 {% lorem 3 random %}
                 {% if page.hyperlink_count > 2 %}
-                    <a href="url">{% lorem 7 w random %}</a>
+                    <a href="#">{% lorem 7 w random %}</a>
                     {% lorem 7 w random %}
                 {% endif %}
             </p>
             <p>
                 {% lorem 3 random %}
                 {% if page.hyperlink_count > 1 %}
-                    <a href="url">{% lorem 5 w random %}</a>
+                    <a href="#">{% lorem 5 w random %}</a>
                     {% lorem 3 w random %}
                 {% endif %}
             </p>
@@ -149,13 +149,13 @@
                 <ul>
                     {% if page.hyperlink_count > 2 %}
                         <li>
-                        <a href="url">{% lorem 7 w random %}</a>
+                        <a href="#">{% lorem 7 w random %}</a>
                         {% lorem 7 w random %}
                         </li>
                     {% endif %}
                     {% if page.hyperlink_count > 1 %}
                         <li>
-                        <a href="url">{% lorem 5 w random %}</a>
+                        <a href="#">{% lorem 5 w random %}</a>
                         {% lorem 3 w random %}
                         </li>
                     {% endif %}
